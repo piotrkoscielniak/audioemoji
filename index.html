@@ -5,12 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Emoji</title>
     <!-- Add your CSS or external links here -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            /* Retro beige with subtle burgundy radial gradient */
+            background: radial-gradient(circle at 60% 40%, #fff8dc 60%, #f5e1d2 85%, #800020 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+        .play-button {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #800020; /* Burgundy red */
+            color: #ffe4c4; /* Bisque - retro, matches burgundy */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 4px solid #fff8dc; /* Light retro border */
+            box-shadow: 0 4px 16px rgba(60,0,20,0.25), 0 2px 0 #5a001a;
+            text-shadow: 1px 1px 0 #5a001a;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            outline: none;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            white-space: normal;
+            padding: 1.2em;
+        }
+        .play-button:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 8px rgba(60,0,20,0.18);
+        }
+        @media (max-width: 600px) {
+            .center-content {
+                max-width: 95vw;
+                padding: 1.2rem 0.2rem;
+            }
+            .play-button {
+                width: 80px;
+                height: 80px;
+                font-size: 0.9rem;
+                padding: 0.7em;
+            }
+            h1 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+        }   
+        /* --- Custom h1 styling --- */
+        h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.5rem;
+            color: #800020;
+            text-shadow: 2px 2px 0 #f5e1d2, 0 2px 8px #80002033;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            margin-top: 0;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff8dc 60%, #f5e1d2 100%);
+            border-radius: 1.2em 0.5em 1.2em 0.5em / 1em 2em 1em 2em;
+            padding: 0.5em 1.2em;
+            display: inline-block;
+            box-shadow: 0 2px 12px #80002022;
+        }
+        /* Optionally import Playfair Display from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+    </style>
 </head>
 <body>
     <!-- Content goes here -->
-    <h1>Welcome to Audio Emoji</h1>
-    <p>Click the button below to play an audio emoji!</p>
-    <button id="play-button">Play Audio Emoji</button>
+    <div class="center-content">
+        <h1>Welcome to Audio Emoji</h1>
+        <button id="play-button" class="play-button">Sad trombone</button>
+    </div>
     <audio id="audio-emoji" src="assets/audio/sad_trombone.mp3"></audio>
     <script src="main.js"></script>
 </body>
